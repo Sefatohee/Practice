@@ -85,8 +85,12 @@ header{
 .services{
     background: #f4f4f4;
     /* height: 100vh; */
-    padding: 85px 0 36px;
+    padding: 0 36px;
     text-align: center;
+}
+.service-container{
+    margin-bottom: 48px;
+    padding-top: 36px;
 }
 .services h1{
     font-size: 20px;
@@ -105,13 +109,11 @@ header{
 .service-names{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 2%;
+    grid-gap: 16px;
 }
 .service-card{
     background: white;
     padding: 48px 28px 24px;
-
-    
 }
 .service-card h2{
     font-size: 15px;
@@ -149,7 +151,7 @@ header{
     padding: 84px 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 2%;
+    grid-gap: 16px;
 }
 .achievements{
     background: white;
@@ -162,4 +164,50 @@ header{
    font-size: 12px;
    color: #1b1b1b;
    text-transform: uppercase;
+}
+.portfolio-container{
+    text-align: center;
+    padding: 84px 0;
+}
+.portfolio-container h1{
+    color: #707070;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 24px 0;
+}
+.portfolio-container p{
+    color: #707070;
+    font-size: 15px;
+    width: 70%;
+    margin: auto;
+    line-height: 2.133;
+}
+.portfolio-links{
+    border-top: 2px solid #6f6f6f;
+    border-bottom: 2px solid #6f6f6f;
+    margin: 100px 0;
+}
+.portfolio-links ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    list-style: none;
+    position: relative;
+}
+.portfolio-links ul li{
+    text-decoration: none;
+}
+.portfolio-links ul a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #1b1b1b;
+    letter-spacing: initial;
+}
+.portfolio-links ul a img{
+    position: absolute;
+    background: white;
+    padding: 41px;
+    top: -90%;
+    right: 41%;
 }
