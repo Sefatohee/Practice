@@ -211,3 +211,19 @@ header{
     top: -90%;
     right: 41%;
 }
+.slides{
+    display: flex;
+}
+.slide{
+    width: 16.66666%;
+    height: 17vw;
+    background-color: #f4f4f4;
+}
+.slide:nth-child(2n){
+    background-color: #1a1a1a;
+}
+.slide-background{
+    background: #ffe500;
+    width: 65%;
+    width: 65%;
+}
