@@ -16,7 +16,7 @@ p {
 }
 header {
   background: #1a1a1a;
-  height: 60vh;
+  height: 85vh;
   padding: 20px;
 }
 .top-header {
@@ -82,7 +82,6 @@ header {
   width: 70%;
   line-height: 1.5rem;
 }
-
 .services {
   background: #f4f4f4;
   /* height: 100vh; */
@@ -115,6 +114,7 @@ header {
 .service-card {
   background: white;
   padding: 48px 28px 24px;
+  box-shadow: #dfdfdf 0px 4px 8px;
 }
 .service-card h2 {
   font-size: 15px;
@@ -133,6 +133,7 @@ header {
   font-size: 12px;
   letter-spacing: initial;
   font-weight: 600;
+  box-shadow: #dfdfdf 0px 4px 8px;
 }
 .ps {
   background: #f4f4f4;
