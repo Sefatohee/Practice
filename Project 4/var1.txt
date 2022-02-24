@@ -1,0 +1,70 @@
+var bestsellerPDP  = {
+    init: function () {
+        this.mainCss();
+        this.mainJS();
+    },
+    mainCss: function () {
+        var s = document.createElement('style');
+        s.setAttribute('type', 'text/css');
+        document.head.appendChild(s).textContent = 
+		    '';
+    },
+    mainJS: function () {
+    	if(tps_menu[0].buttonUrl=='/bestsellers'){
+    		console.log('bestseller-page');
+    		
+    		var newDiv = document.createElement('div');
+	        newDiv.setAttribute('id', 'left-number');
+	        
+	        var rand = Math.floor(Math.random() * 10);
+	        
+	        var parentNode = document.querySelector('.tps_productDetailHeader');
+	        parentNode.insertBefore(newDiv,parentNode.children[0]);
+	        
+	        newDiv.innerHTML=`<p>Only `+rand+` Left<p>`;
+    	}
+        
+    },
+
+};
+
+(function pollFor() {
+    if (document.querySelector('.tps_productDetailHeader')) {
+        try {
+            bestsellerPDP.init();
+			console.log("Variation- A: 01");
+		} catch (error) {
+		  console.log("Initialization error:", error);
+		}
+    } else {
+        setTimeout(pollFor, 25);
+    }
+})();
+
+
+
+
+
+
+*************************      css       *************
+div.tps_productDetailHeader{
+	grid-template-areas: "title title wishlist"
+						 "left left left"
+						 "shipping rating rating"
+						 "note note note";
+}
+h1.tps_productDetailHeader_title{
+	margin-bottom: 0;
+}
+#left-number{
+	margin: 8px 0;
+}
+#left-number p{
+	font-size: 18px;
+	font-weight: 600;
+	color: #247d5f;
+}
+
+
+
+

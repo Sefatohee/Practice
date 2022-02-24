@@ -1,0 +1,58 @@
+var bestsellerPDP  = {
+    init: function () {
+        this.mainCss();
+        this.mainJS();
+    },
+    mainCss: function () {
+        var s = document.createElement('style');
+        s.setAttribute('type', 'text/css');
+        document.head.appendChild(s).textContent = 
+		    '';
+    },
+    mainJS: function () {
+    	if(tps_menu[0].buttonUrl=='/bestsellers'){
+    		console.log('bestseller-page');
+
+ 	        var rand = Math.floor(Math.random() * 100);
+
+    		var checkedDiv = document.createElement('div');
+	        checkedDiv.setAttribute('id', 'checked-number');
+	        var subDiv = document.createElement('div');
+	        subDiv.setAttribute('id', 'tps_productDetail_addtocartprice-container');
+	       
+	        
+	        var parentNode = document.querySelector('.cta');
+	        parentNode.appendChild(checkedDiv);
+	        parentNode.appendChild(parentNode.children[0]);
+	        // parentNode.appendChild(subDiv);
+	        
+	        // subDiv.appendchild(parentNode.children[1]);
+	        
+	        checkedDiv.innerHTML=`<p>This item have checked out `+rand+` times today <p>`;
+    	}
+        
+    },
+
+};
+
+(function pollFor() {
+    if (document.querySelector('.tps_productaddtocart')) {
+        try {
+            bestsellerPDP.init();
+			console.log("Variation- A: 02");
+		} catch (error) {
+		  console.log("Initialization error:", error);
+		}
+    } else {
+        setTimeout(pollFor, 25);
+    }
+})();
+
+
+********************************* css *************************
+#checked-number p{
+	font-size: 12px;
+}
+.tps_productDetail_addtocartprice{
+	margin-top: 42px;
+}

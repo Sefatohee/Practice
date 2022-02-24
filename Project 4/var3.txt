@@ -1,0 +1,68 @@
+var bestsellerPDP  = {
+    init: function () {
+        this.mainCss();
+        this.mainJS();
+    },
+    mainCss: function () {
+        var s = document.createElement('style');
+        s.setAttribute('type', 'text/css');
+        document.head.appendChild(s).textContent = 
+		    '';
+    },
+    mainJS: function () {
+    	if(tps_menu[0].buttonUrl=='/bestsellers'){
+    		console.log('bestseller-page');
+    		
+    		var newDiv = document.createElement('div');
+	        newDiv.setAttribute('id', 'wished-number');
+	        
+	        var rand = Math.floor(Math.random() * 100);
+	        
+	        var parentNode = document.querySelector('.tps_productDetailHeader');
+	        parentNode.insertBefore(newDiv,parentNode.children[0]);
+	        
+	        newDiv.innerHTML=`<p>These earrings have been wish-listed <span>`+rand+`</span> times today<p>`;
+    	}
+        
+    },
+
+};
+
+(function pollFor() {
+    if (document.querySelector('.tps_productDetailHeader')) {
+        try {
+            bestsellerPDP.init();
+			console.log("Variation- A: 03");
+		} catch (error) {
+		  console.log("Initialization error:", error);
+		}
+    } else {
+        setTimeout(pollFor, 25);
+    }
+})();
+
+
+*************************          css         ***********************
+ div.tps_productDetailHeader{
+	grid-template-areas: "title title wishlist"
+						 "left left left"
+						 "shipping rating rating"
+						 "note note note";
+}
+h1.tps_productDetailHeader_title{
+	margin-bottom: 0;
+}
+#wished-number{
+	margin: 8px 0;
+}
+#wished-number p{
+	font-size: 16px;
+	font-weight: normal;
+	color: #62564A;
+}
+#wished-number span{
+	font-size: 18px;
+	font-weight: 600;
+	color: #62564A;
+}
+
